@@ -14,4 +14,10 @@ class WebSocketController @Inject()(cc:ControllerComponents) (implicit system: A
       MyWebSocketActor.props(out)
     }
   }
+
+  def pushMessage = WebSocket.accept[String,String] { request =>
+    ActorFlow.actorRef { out =>
+      MyWebSocketActor.props(out)
+    }
+  }
 }

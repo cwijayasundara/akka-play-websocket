@@ -15,5 +15,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /websock                    controllers.WebSocketController.socketMessage
 
+GET /push                           controllers.WebSocketController.pushMessage
+
 
       
